@@ -45,17 +45,19 @@ body {
 .navigation_container {
     max-width: 1100px;
     margin: 0 auto;
-    padding: 14px 20px;
+    padding: 12px 20px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 15px;
+    flex-wrap: wrap;
 }
 
 .brand_identity_block {
     display: flex;
     align-items: center;
     gap: 12px;
+    text-decoration: none;
 }
 
 .brand_logo_icon {
@@ -98,42 +100,33 @@ body {
     color: var(--neutral_muted_text);
 }
 
-.header_action_controls {
+.main_navigation_links {
     display: flex;
     align-items: center;
     gap: 8px;
 }
 
-.action_icon_button {
-    width: 38px;
-    height: 38px;
-    border-radius: 8px;
-    border: 1px solid var(--border_subtle_color);
-    background: var(--surface_card_color);
+.nav_link_item {
+    text-decoration: none;
     color: var(--neutral_body_text);
-    display: flex;
+    font-size: 0.88rem;
+    font-weight: 600;
+    padding: 7px 14px;
+    border-radius: 20px;
+    transition: background-color 0.15s ease, color 0.15s ease;
+    display: inline-flex;
     align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    font-size: 0.95rem;
-    transition: background-color 0.15s ease, border-color 0.15s ease;
+    gap: 6px;
 }
 
-.action_icon_button:hover {
+.nav_link_item:hover {
     background: #F1F5F9;
-    border-color: var(--border_focus_color);
+    color: var(--neutral_dark_text);
 }
 
-.action_icon_button.active {
-    background: var(--status_blue_background);
-    color: var(--status_blue_color);
-    border-color: #BFDBFE;
-}
-
-.action_icon_button.muted {
-    background: #FEF2F2;
-    color: #DC2626;
-    border-color: #FECACA;
+.nav_link_item.active_nav {
+    background: var(--brand_primary_color);
+    color: #FFFFFF;
 }
 
 .primary_content_area {
@@ -423,13 +416,6 @@ body {
     letter-spacing: 0.5px;
 }
 
-.hub_urdu_text {
-    font-family: var(--urdu_font_family);
-    font-size: 0.75rem;
-    margin-top: -3px;
-    opacity: 0.9;
-}
-
 .spin_actions_panel {
     text-align: center;
     display: flex;
@@ -473,14 +459,6 @@ body {
     box-shadow: none;
 }
 
-.spacebar_hint_badge {
-    background: rgba(0, 0, 0, 0.2);
-    font-size: 0.72rem;
-    font-weight: 600;
-    padding: 3px 8px;
-    border-radius: 6px;
-}
-
 .auxiliary_action_buttons {
     display: flex;
     gap: 8px;
@@ -501,6 +479,7 @@ body {
     display: inline-flex;
     align-items: center;
     gap: 6px;
+    text-decoration: none;
     transition: background-color 0.15s ease, border-color 0.15s ease;
 }
 
@@ -730,8 +709,27 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 8px;
     padding-top: 10px;
     border-top: 1px solid #F1F5F9;
+}
+
+.menu_page_action_button {
+    background: var(--brand_primary_color);
+    color: #FFFFFF;
+    text-decoration: none;
+    font-size: 0.78rem;
+    font-weight: 600;
+    padding: 6px 12px;
+    border-radius: 6px;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    transition: background-color 0.15s ease;
+}
+
+.menu_page_action_button:hover {
+    background: #334155;
 }
 
 .google_maps_action_link {
@@ -750,6 +748,201 @@ body {
 
 .google_maps_action_link:hover {
     background: #1D4ED8;
+}
+
+.menu_showcase_header {
+    background: var(--surface_card_color);
+    border: 1px solid var(--border_subtle_color);
+    border-radius: 14px;
+    padding: 22px;
+    margin-bottom: 24px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+}
+
+.menu_restaurant_picker_row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 16px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid var(--border_subtle_color);
+}
+
+.restaurant_selector_dropdown {
+    background: #FFFFFF;
+    border: 1px solid var(--border_subtle_color);
+    border-radius: 8px;
+    padding: 8px 14px;
+    font-family: var(--primary_font_family);
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--neutral_dark_text);
+    outline: none;
+    cursor: pointer;
+    max-width: 100%;
+}
+
+.restaurant_selector_dropdown:focus {
+    border-color: var(--brand_accent_color);
+}
+
+.menu_header_details_grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 12px;
+    font-size: 0.85rem;
+}
+
+.menu_meta_box {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--neutral_muted_text);
+}
+
+.menu_meta_box i {
+    color: var(--brand_accent_color);
+    font-size: 1rem;
+}
+
+.deal_recommendation_container {
+    background: #FFFDF9;
+    border: 2px solid #FED7AA;
+    border-radius: 14px;
+    padding: 22px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 14px rgba(234, 88, 12, 0.06);
+}
+
+.deal_section_title_row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 16px;
+}
+
+.deal_badge_highlight {
+    background: #FFEDD5;
+    color: #C2410C;
+    font-size: 0.75rem;
+    font-weight: 800;
+    padding: 4px 10px;
+    border-radius: 12px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.deals_grid_layout {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 16px;
+}
+
+.single_deal_card {
+    background: #FFFFFF;
+    border: 1px solid #FED7AA;
+    border-radius: 12px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.single_deal_card_top {
+    margin-bottom: 12px;
+}
+
+.deal_card_name {
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: var(--neutral_dark_text);
+    margin-bottom: 4px;
+}
+
+.deal_card_description {
+    font-size: 0.82rem;
+    color: var(--neutral_muted_text);
+    margin-bottom: 10px;
+}
+
+.deal_items_checklist {
+    list-style: none;
+    padding-left: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin-bottom: 12px;
+}
+
+.deal_items_checklist li {
+    font-size: 0.82rem;
+    color: var(--neutral_body_text);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.deal_items_checklist li i {
+    color: var(--status_green_color);
+    font-size: 0.75rem;
+}
+
+.deal_pricing_footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 10px;
+    border-top: 1px dashed #FED7AA;
+}
+
+.deal_price_tag {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: #EA580C;
+}
+
+.menu_items_section_card {
+    background: var(--surface_card_color);
+    border: 1px solid var(--border_subtle_color);
+    border-radius: 14px;
+    padding: 22px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+}
+
+.menu_items_grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 12px;
+    margin-top: 16px;
+}
+
+.menu_single_item_row {
+    background: #F8FAFC;
+    border: 1px solid var(--border_subtle_color);
+    border-radius: 8px;
+    padding: 12px 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+.menu_item_title {
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: var(--neutral_dark_text);
+}
+
+.menu_item_cost {
+    font-size: 0.92rem;
+    font-weight: 800;
+    color: var(--neutral_dark_text);
+    white-space: nowrap;
 }
 
 .popup_modal_overlay {
@@ -1010,6 +1203,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 8px;
     padding-top: 6px;
     border-top: 1px dashed var(--border_subtle_color);
     font-size: 0.75rem;
@@ -1093,6 +1287,16 @@ body {
 }
 
 @media (max-width: 768px) {
+    .navigation_container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .main_navigation_links {
+        width: 100%;
+        justify-content: space-between;
+    }
+
     .main_page_title {
         font-size: 1.6rem;
     }

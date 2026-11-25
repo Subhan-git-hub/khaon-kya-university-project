@@ -1,0 +1,37 @@
+<section class="wheel_display_section">
+    <div class="wheel_frame_wrapper">
+        <div class="wheel_top_pointer" id="wheel_pointer_indicator">
+            <div class="pointer_triangle_shape"></div>
+            <div class="pointer_center_pin"></div>
+        </div>
+
+        <div class="canvas_wheel_container">
+            <canvas id="food_wheel_canvas" width="540" height="540"></canvas>
+            
+            <button id="center_spin_hub_button" class="wheel_center_hub_button" title="Spin">
+                <span class="hub_spin_text">SPIN</span>
+            </button>
+        </div>
+    </div>
+
+    <div class="spin_actions_panel">
+        <button id="primary_spin_trigger_button" class="large_spin_action_button">
+            <i class="fa-solid fa-rotate"></i>
+            <span>SPIN THE WHEEL</span>
+        </button>
+
+        <div class="auxiliary_action_buttons">
+            <button id="instant_random_pick_button" class="subtle_action_button">
+                <i class="fa-solid fa-bolt"></i> Instant Pick
+            </button>
+            <button id="jump_to_all_spots_button" class="subtle_action_button">
+                <i class="fa-solid fa-list-ul"></i> View All Spots
+            </button>
+        </div>
+
+        <div class="wheel_status_message_box" id="wheel_status_message_box">
+            <i class="fa-solid fa-circle-info"></i>
+            <span>Click <strong>SPIN THE WHEEL</strong> to choose your food.</span>
+        </div>
+    </div>
+</section>

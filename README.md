@@ -1,17 +1,14 @@
 # Khao Kya? (کھاؤ کیا؟) - Location-Based Food Recommendation Website
 
-Food recommendation spinner website for students at FAST-NUCES Karachi, Shah Latif Campus.
+Food recommendation and 1-person meal planning website for students at FAST-NUCES Karachi, Shah Latif Campus.
 
-## Features
-- Interactive canvas food roulette wheel (Burger, Biryani, Fries, Shawarma, Roll, Chai, Halwa Poori, Lassi, Doodh Soda, Spaghetti, Karahi, Samosa Chaat)
-- Web Audio API ratchet tick sounds and celebration buzzer chime
-- Voice announcement upon winning
-- Food result popup with verified canteens and dhabas within 5 km of Shah Latif Campus
-- Direct Google Maps routing links for each food spot
-- Distance, budget, and category filters
+## Pages
+1. **Home (`index.html`)**: Interactive food spinner roulette wheel with customizable food filters, instant pick, and win recommendation modal.
+2. **All Locations (`locations.html`)**: Verified canteens and eateries within 5 km radius with search, distance filters, walking times, and direct links to menus.
+3. **Menu & Deals (`menu.html`)**: Restaurant menus with automated single-person meal deal recommendations based on student budget and food preferences.
 
 ## Technologies
-- HTML5 Canvas
+- HTML5
 - CSS3
-- JavaScript
+- JavaScript (ES6)
 - jQuery 3.7

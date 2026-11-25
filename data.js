@@ -160,7 +160,46 @@ const restaurants_database = [
         total_reviews: 420,
         opening_hours: "8:00 AM - 6:00 PM",
         student_advice: "Fresh biryani arrives at 12:45 PM daily.",
-        maps_search_query: "FAST NUCES Karachi Main Campus Cafeteria National Highway"
+        maps_search_query: "FAST NUCES Karachi Main Campus Cafeteria National Highway",
+        menu_items_list: [
+            { item_name: "Chicken Dum Biryani (Single Plate)", price_in_rupees: 180, item_category: "desi" },
+            { item_name: "Crispy Zinger Burger", price_in_rupees: 220, item_category: "fastfood" },
+            { item_name: "Chicken Paratha Roll", price_in_rupees: 140, item_category: "fastfood" },
+            { item_name: "Masala French Fries", price_in_rupees: 80, item_category: "fastfood" },
+            { item_name: "Spicy Chicken Spaghetti Bowl", price_in_rupees: 170, item_category: "fastfood" },
+            { item_name: "Chana Samosa Chaat Plate", price_in_rupees: 90, item_category: "breakfast" },
+            { item_name: "Karak Doodh Patti Chai", price_in_rupees: 50, item_category: "beverage" },
+            { item_name: "Chilled Pakola Doodh Soda", price_in_rupees: 70, item_category: "beverage" }
+        ],
+        recommended_single_person_deals: [
+            {
+                deal_name: "Daily Student Biryani Combo",
+                deal_description: "Full plate hot chicken biryani with fresh raita and chilled doodh soda.",
+                deal_items: ["Chicken Dum Biryani", "Raita & Salad", "Chilled Pakola Doodh Soda"],
+                deal_price_in_rupees: 230,
+                deal_tag: "Best 1-Person Value",
+                deal_budget_type: "budget",
+                deal_food_category: "desi"
+            },
+            {
+                deal_name: "Quick Zinger & Fries Meal",
+                deal_description: "Crispy chicken zinger burger paired with hot masala fries.",
+                deal_items: ["Crispy Zinger Burger", "Masala French Fries"],
+                deal_price_in_rupees: 270,
+                deal_tag: "Fast Food Special",
+                deal_budget_type: "budget",
+                deal_food_category: "fastfood"
+            },
+            {
+                deal_name: "Pocket Saver Tea & Roll",
+                deal_description: "One chicken paratha roll with a steaming cup of karak doodh patti.",
+                deal_items: ["Chicken Paratha Roll", "Karak Doodh Patti Chai"],
+                deal_price_in_rupees: 170,
+                deal_tag: "Budget Saver",
+                deal_budget_type: "budget",
+                deal_food_category: "beverage"
+            }
+        ]
     },
     {
         restaurant_id: "fast_dhaba_khokha",
@@ -176,7 +215,36 @@ const restaurants_database = [
         total_reviews: 560,
         opening_hours: "8:30 AM - 7:30 PM",
         student_advice: "Great karak doodh patti tea during assignment study breaks.",
-        maps_search_query: "FAST NUCES Karachi National Highway Sports Lawn"
+        maps_search_query: "FAST NUCES Karachi National Highway Sports Lawn",
+        menu_items_list: [
+            { item_name: "Special Karak Doodh Patti", price_in_rupees: 45, item_category: "beverage" },
+            { item_name: "Sweet Thick Creamy Lassi", price_in_rupees: 90, item_category: "beverage" },
+            { item_name: "Pakola Chilled Doodh Soda", price_in_rupees: 70, item_category: "beverage" },
+            { item_name: "Chicken Garlic Mayo Roll", price_in_rupees: 130, item_category: "fastfood" },
+            { item_name: "Hot Samosa Chaat", price_in_rupees: 80, item_category: "breakfast" },
+            { item_name: "Lachha Paratha with Omelette", price_in_rupees: 110, item_category: "breakfast" },
+            { item_name: "Crispy Peri Peri Fries", price_in_rupees: 80, item_category: "fastfood" }
+        ],
+        recommended_single_person_deals: [
+            {
+                deal_name: "Study Break Dhaba Special",
+                deal_description: "One chicken garlic mayo roll and a hot cup of karak chai.",
+                deal_items: ["Chicken Garlic Mayo Roll", "Special Karak Doodh Patti"],
+                deal_price_in_rupees: 160,
+                deal_tag: "Best 1-Person Value",
+                deal_budget_type: "budget",
+                deal_food_category: "beverage"
+            },
+            {
+                deal_name: "Lawn Breakfast Meal",
+                deal_description: "Crispy lachha paratha, double egg omelette, and karak chai.",
+                deal_items: ["Lachha Paratha with Omelette", "Special Karak Doodh Patti"],
+                deal_price_in_rupees: 140,
+                deal_tag: "Morning Special",
+                deal_budget_type: "budget",
+                deal_food_category: "breakfast"
+            }
+        ]
     },
     {
         restaurant_id: "fast_cs_kiosk",
@@ -192,7 +260,25 @@ const restaurants_database = [
         total_reviews: 190,
         opening_hours: "9:00 AM - 5:00 PM",
         student_advice: "Convenient spot for quick snacks between programming labs.",
-        maps_search_query: "FAST NUCES Karachi CS Block"
+        maps_search_query: "FAST NUCES Karachi CS Block",
+        menu_items_list: [
+            { item_name: "Chicken Garlic Shawarma", price_in_rupees: 150, item_category: "fastfood" },
+            { item_name: "Crispy Chicken Burger", price_in_rupees: 160, item_category: "fastfood" },
+            { item_name: "Potato Fries Cup", price_in_rupees: 70, item_category: "fastfood" },
+            { item_name: "Chana Samosa Bowl", price_in_rupees: 80, item_category: "breakfast" },
+            { item_name: "7Up Chilled Doodh Soda", price_in_rupees: 65, item_category: "beverage" }
+        ],
+        recommended_single_person_deals: [
+            {
+                deal_name: "Lab Break Shawarma Combo",
+                deal_description: "Hot chicken shawarma with fries and refreshing doodh soda.",
+                deal_items: ["Chicken Garlic Shawarma", "Potato Fries Cup", "7Up Chilled Doodh Soda"],
+                deal_price_in_rupees: 250,
+                deal_tag: "Best 1-Person Value",
+                deal_budget_type: "budget",
+                deal_food_category: "fastfood"
+            }
+        ]
     },
     {
         restaurant_id: "quetta_al_hanif",
@@ -208,7 +294,35 @@ const restaurants_database = [
         total_reviews: 340,
         opening_hours: "24 Hours Open",
         student_advice: "Popular 24/7 dhaba for parathas and chai right on the highway.",
-        maps_search_query: "New Quetta Al Hanif Restaurant National Highway Shah Latif Town Karachi"
+        maps_search_query: "New Quetta Al Hanif Restaurant National Highway Shah Latif Town Karachi",
+        menu_items_list: [
+            { item_name: "Halwa Poori Thali (3 Pooris + Channay + Halwa)", price_in_rupees: 170, item_category: "breakfast" },
+            { item_name: "Sweet Curd Lassi with Balai", price_in_rupees: 120, item_category: "beverage" },
+            { item_name: "Chicken Tikka Paratha Roll", price_in_rupees: 160, item_category: "fastfood" },
+            { item_name: "Karak Special Doodh Patti", price_in_rupees: 60, item_category: "beverage" },
+            { item_name: "Single Chicken Karahi Plate with 2 Naan", price_in_rupees: 420, item_category: "desi" },
+            { item_name: "Pakola Chilled Milk Soda", price_in_rupees: 80, item_category: "beverage" }
+        ],
+        recommended_single_person_deals: [
+            {
+                deal_name: "Solo Morning Poori Feast",
+                deal_description: "Fresh halwa poori thali with hot channay, aloo tarkari, and sweet lassi.",
+                deal_items: ["Halwa Poori Thali (3 Pooris)", "Sweet Curd Lassi with Balai"],
+                deal_price_in_rupees: 260,
+                deal_tag: "Breakfast Champion",
+                deal_budget_type: "budget",
+                deal_food_category: "breakfast"
+            },
+            {
+                deal_name: "Late Night Paratha & Chai Deal",
+                deal_description: "Juicy chicken tikka paratha roll followed by famous highway doodh patti.",
+                deal_items: ["Chicken Tikka Paratha Roll", "Karak Special Doodh Patti"],
+                deal_price_in_rupees: 200,
+                deal_tag: "Best 1-Person Value",
+                deal_budget_type: "budget",
+                deal_food_category: "beverage"
+            }
+        ]
     },
     {
         restaurant_id: "quetta_alamgir_dhaba",
@@ -224,7 +338,24 @@ const restaurants_database = [
         total_reviews: 215,
         opening_hours: "5:00 AM - 2:00 AM",
         student_advice: "Fresh lachha parathas and strong doodh patti tea.",
-        maps_search_query: "Quetta Alamgir Hotel National Highway Karachi"
+        maps_search_query: "Quetta Alamgir Hotel National Highway Karachi",
+        menu_items_list: [
+            { item_name: "Lachha Paratha with Omelette", price_in_rupees: 120, item_category: "breakfast" },
+            { item_name: "Matka Elaichi Chai", price_in_rupees: 70, item_category: "beverage" },
+            { item_name: "Sweet Balai Lassi", price_in_rupees: 100, item_category: "beverage" },
+            { item_name: "Chicken Kebab Paratha Roll", price_in_rupees: 150, item_category: "fastfood" }
+        ],
+        recommended_single_person_deals: [
+            {
+                deal_name: "Alamgir Desi Breakfast Combo",
+                deal_description: "Freshly made lachha paratha, cheese omelette, and matka elaichi chai.",
+                deal_items: ["Lachha Paratha with Omelette", "Matka Elaichi Chai"],
+                deal_price_in_rupees: 170,
+                deal_tag: "Morning Special",
+                deal_budget_type: "budget",
+                deal_food_category: "breakfast"
+            }
+        ]
     },
     {
         restaurant_id: "bfc_bangash_corner",
@@ -240,7 +371,34 @@ const restaurants_database = [
         total_reviews: 285,
         opening_hours: "1:00 PM - 1:00 AM",
         student_advice: "Crispy zinger burger and club sandwiches near campus.",
-        maps_search_query: "Bangash Food Corner Sector 17 C Shah Latif Town Karachi"
+        maps_search_query: "Bangash Food Corner Sector 17 C Shah Latif Town Karachi",
+        menu_items_list: [
+            { item_name: "BFC Jumbo Crispy Zinger Burger", price_in_rupees: 300, item_category: "fastfood" },
+            { item_name: "Loaded Cheesy Garlic Fries", price_in_rupees: 180, item_category: "fastfood" },
+            { item_name: "Chicken Bihari Paratha Roll", price_in_rupees: 200, item_category: "fastfood" },
+            { item_name: "Arabic Chicken Shawarma Wrap", price_in_rupees: 170, item_category: "fastfood" },
+            { item_name: "Chicken Tikka Stir-fry Spaghetti", price_in_rupees: 280, item_category: "fastfood" }
+        ],
+        recommended_single_person_deals: [
+            {
+                deal_name: "BFC Solo Zinger Box",
+                deal_description: "Jumbo crispy zinger burger, portion of loaded fries, and cold drink.",
+                deal_items: ["BFC Jumbo Crispy Zinger Burger", "Loaded Cheesy Garlic Fries"],
+                deal_price_in_rupees: 420,
+                deal_tag: "Best 1-Person Value",
+                deal_budget_type: "mid",
+                deal_food_category: "fastfood"
+            },
+            {
+                deal_name: "Solo Student Shawarma Meal",
+                deal_description: "Arabic chicken shawarma with spicy masala fries.",
+                deal_items: ["Arabic Chicken Shawarma Wrap", "Loaded Cheesy Garlic Fries"],
+                deal_price_in_rupees: 320,
+                deal_tag: "Budget Saver",
+                deal_budget_type: "mid",
+                deal_food_category: "fastfood"
+            }
+        ]
     },
     {
         restaurant_id: "al_rahim_biryani",
@@ -256,7 +414,24 @@ const restaurants_database = [
         total_reviews: 410,
         opening_hours: "11:30 AM - 11:30 PM",
         student_advice: "Flavourful chicken dum biryani with generous portions.",
-        maps_search_query: "Al Rahim Biryani Zakaria Chowk Shah Latif Town Karachi"
+        maps_search_query: "Al Rahim Biryani Zakaria Chowk Shah Latif Town Karachi",
+        menu_items_list: [
+            { item_name: "Special Chicken Dum Biryani Single", price_in_rupees: 220, item_category: "desi" },
+            { item_name: "Special Beef Degi Pulao Single", price_in_rupees: 260, item_category: "desi" },
+            { item_name: "Fresh Zeera Raita & Salad Cup", price_in_rupees: 40, item_category: "desi" },
+            { item_name: "Shami Kabab Single Piece", price_in_rupees: 50, item_category: "desi" }
+        ],
+        recommended_single_person_deals: [
+            {
+                deal_name: "Al-Rahim Solo Biryani Treat",
+                deal_description: "Single chicken biryani with shami kabab and zeera raita.",
+                deal_items: ["Special Chicken Dum Biryani Single", "Shami Kabab Single Piece", "Fresh Zeera Raita & Salad Cup"],
+                deal_price_in_rupees: 280,
+                deal_tag: "Best 1-Person Value",
+                deal_budget_type: "budget",
+                deal_food_category: "desi"
+            }
+        ]
     },
     {
         restaurant_id: "pizzadda_shah_latif",
@@ -272,7 +447,24 @@ const restaurants_database = [
         total_reviews: 160,
         opening_hours: "12:00 PM - 12:30 AM",
         student_advice: "Decent chicken pasta and fast food combos.",
-        maps_search_query: "Pizzadda Shah Latif Town Karachi"
+        maps_search_query: "Pizzadda Shah Latif Town Karachi",
+        menu_items_list: [
+            { item_name: "Creamy Chicken Alfredo Pasta Bowl", price_in_rupees: 380, item_category: "fastfood" },
+            { item_name: "Spicy Chicken Macaroni Bowl", price_in_rupees: 280, item_category: "fastfood" },
+            { item_name: "Crispy Chicken Patty Burger", price_in_rupees: 240, item_category: "fastfood" },
+            { item_name: "Cheesy Oven Baked Fries", price_in_rupees: 200, item_category: "fastfood" }
+        ],
+        recommended_single_person_deals: [
+            {
+                deal_name: "Solo Pasta & Fries Meal",
+                deal_description: "Creamy chicken Alfredo pasta served with cheesy baked fries.",
+                deal_items: ["Creamy Chicken Alfredo Pasta Bowl", "Cheesy Oven Baked Fries"],
+                deal_price_in_rupees: 520,
+                deal_tag: "Italian Special",
+                deal_budget_type: "mid",
+                deal_food_category: "fastfood"
+            }
+        ]
     },
     {
         restaurant_id: "al_madina_sweets_halwa",
@@ -288,7 +480,23 @@ const restaurants_database = [
         total_reviews: 195,
         opening_hours: "6:00 AM - 10:00 PM",
         student_advice: "Puffy morning halwa pooris and fresh curd lassi.",
-        maps_search_query: "Al Madina Sweets Shah Latif Town Karachi"
+        maps_search_query: "Al Madina Sweets Shah Latif Town Karachi",
+        menu_items_list: [
+            { item_name: "Halwa Poori Plate with Channay & Tarkari", price_in_rupees: 160, item_category: "breakfast" },
+            { item_name: "Peray Wali Creamy Lassi", price_in_rupees: 130, item_category: "beverage" },
+            { item_name: "Crispy Samosa Chaat Bowl", price_in_rupees: 90, item_category: "breakfast" }
+        ],
+        recommended_single_person_deals: [
+            {
+                deal_name: "Sweet Morning Breakfast Deal",
+                deal_description: "Full plate halwa poori with special peray wali creamy lassi.",
+                deal_items: ["Halwa Poori Plate with Channay & Tarkari", "Peray Wali Creamy Lassi"],
+                deal_price_in_rupees: 270,
+                deal_tag: "Best 1-Person Value",
+                deal_budget_type: "budget",
+                deal_food_category: "breakfast"
+            }
+        ]
     },
     {
         restaurant_id: "master_roll_corner",
@@ -304,7 +512,24 @@ const restaurants_database = [
         total_reviews: 310,
         opening_hours: "4:00 PM - 1:00 AM",
         student_advice: "Chicken garlic mayo paratha roll with chutney.",
-        maps_search_query: "Master Roll National Highway Shah Latif Karachi"
+        maps_search_query: "Master Roll National Highway Shah Latif Karachi",
+        menu_items_list: [
+            { item_name: "Chicken Garlic Mayo Paratha Roll", price_in_rupees: 170, item_category: "fastfood" },
+            { item_name: "Beef Bihari Kabab Roll", price_in_rupees: 190, item_category: "fastfood" },
+            { item_name: "Zinger Paratha Roll", price_in_rupees: 210, item_category: "fastfood" },
+            { item_name: "Hot Masala Fries Portion", price_in_rupees: 80, item_category: "fastfood" }
+        ],
+        recommended_single_person_deals: [
+            {
+                deal_name: "Solo Roll & Fries Combo",
+                deal_description: "Special chicken garlic mayo roll served with hot masala fries.",
+                deal_items: ["Chicken Garlic Mayo Paratha Roll", "Hot Masala Fries Portion"],
+                deal_price_in_rupees: 230,
+                deal_tag: "Best 1-Person Value",
+                deal_budget_type: "budget",
+                deal_food_category: "fastfood"
+            }
+        ]
     },
     {
         restaurant_id: "dip_shop_shakes",
@@ -320,7 +545,24 @@ const restaurants_database = [
         total_reviews: 520,
         opening_hours: "11:00 AM - 2:00 AM",
         student_advice: "Chilled Pakola doodh soda and milkshakes.",
-        maps_search_query: "Dip Shop Manzil Pump National Highway Karachi"
+        maps_search_query: "Dip Shop Manzil Pump National Highway Karachi",
+        menu_items_list: [
+            { item_name: "Special Pakola Ice Cream Doodh Soda", price_in_rupees: 140, item_category: "beverage" },
+            { item_name: "Thick Mango / Banana Milkshake", price_in_rupees: 180, item_category: "beverage" },
+            { item_name: "Crispy Potato Masala Fries", price_in_rupees: 110, item_category: "fastfood" },
+            { item_name: "Crispy Chicken Patty Burger", price_in_rupees: 200, item_category: "fastfood" }
+        ],
+        recommended_single_person_deals: [
+            {
+                deal_name: "Solo Burger & Shake Deal",
+                deal_description: "Crispy chicken burger with special ice cream doodh soda.",
+                deal_items: ["Crispy Chicken Patty Burger", "Special Pakola Ice Cream Doodh Soda"],
+                deal_price_in_rupees: 310,
+                deal_tag: "Refreshment Special",
+                deal_budget_type: "mid",
+                deal_food_category: "beverage"
+            }
+        ]
     },
     {
         restaurant_id: "chatkazz_foods_bbq",
@@ -336,7 +578,24 @@ const restaurants_database = [
         total_reviews: 390,
         opening_hours: "1:00 PM - 2:00 AM",
         student_advice: "Good place for chicken tikka, handi, and rolls.",
-        maps_search_query: "Chatkazz Foods National Highway Quaidabad Karachi"
+        maps_search_query: "Chatkazz Foods National Highway Quaidabad Karachi",
+        menu_items_list: [
+            { item_name: "Chicken Tikka Leg Piece with Puri Paratha", price_in_rupees: 280, item_category: "desi" },
+            { item_name: "Smoky Chicken Boti Paratha Roll", price_in_rupees: 210, item_category: "fastfood" },
+            { item_name: "Single Boneless Handi Portion", price_in_rupees: 420, item_category: "desi" },
+            { item_name: "Spicy Beef Dum Biryani", price_in_rupees: 250, item_category: "desi" }
+        ],
+        recommended_single_person_deals: [
+            {
+                deal_name: "Solo BBQ Feast",
+                deal_description: "Chicken tikka leg piece, fresh puri paratha, raita, and salad.",
+                deal_items: ["Chicken Tikka Leg Piece with Puri Paratha", "Smoky Chicken Boti Paratha Roll"],
+                deal_price_in_rupees: 450,
+                deal_tag: "BBQ Special",
+                deal_budget_type: "mid",
+                deal_food_category: "desi"
+            }
+        ]
     },
     {
         restaurant_id: "pizza_max_quaidabad",
@@ -352,7 +611,23 @@ const restaurants_database = [
         total_reviews: 680,
         opening_hours: "11:00 AM - 1:00 AM",
         student_advice: "Air conditioned dining with pasta and pizza options.",
-        maps_search_query: "Pizza Max Quaidabad National Highway Karachi"
+        maps_search_query: "Pizza Max Quaidabad National Highway Karachi",
+        menu_items_list: [
+            { item_name: "Chicken Alfredo Creamy Pasta", price_in_rupees: 420, item_category: "fastfood" },
+            { item_name: "Loaded Cheesy Sticks with Dip", price_in_rupees: 250, item_category: "fastfood" },
+            { item_name: "Crispy Zinger Supreme Burger", price_in_rupees: 320, item_category: "fastfood" }
+        ],
+        recommended_single_person_deals: [
+            {
+                deal_name: "Solo Student Pasta Meal",
+                deal_description: "Hot chicken Alfredo pasta bowl with cheesy garlic sticks.",
+                deal_items: ["Chicken Alfredo Creamy Pasta", "Loaded Cheesy Sticks with Dip"],
+                deal_price_in_rupees: 580,
+                deal_tag: "Italian Feast",
+                deal_budget_type: "mid",
+                deal_food_category: "fastfood"
+            }
+        ]
     },
     {
         restaurant_id: "new_waseela_biryani",
@@ -368,7 +643,24 @@ const restaurants_database = [
         total_reviews: 610,
         opening_hours: "11:00 AM - 11:00 PM",
         student_advice: "Hearty and spicy Karachi beef pulao and biryani.",
-        maps_search_query: "New Waseela Biryani Quaidabad Karachi"
+        maps_search_query: "New Waseela Biryani Quaidabad Karachi",
+        menu_items_list: [
+            { item_name: "Beef Nalli Dum Biryani Single", price_in_rupees: 280, item_category: "desi" },
+            { item_name: "Special Chicken Dum Biryani Single", price_in_rupees: 230, item_category: "desi" },
+            { item_name: "Shami Kabab Single", price_in_rupees: 50, item_category: "desi" },
+            { item_name: "Raita & Fresh Salad Cup", price_in_rupees: 35, item_category: "desi" }
+        ],
+        recommended_single_person_deals: [
+            {
+                deal_name: "Waseela Beef Biryani Deal",
+                deal_description: "Generous beef nalli biryani single with shami kabab and salad.",
+                deal_items: ["Beef Nalli Dum Biryani Single", "Shami Kabab Single", "Raita & Fresh Salad Cup"],
+                deal_price_in_rupees: 340,
+                deal_tag: "Best 1-Person Value",
+                deal_budget_type: "budget",
+                deal_food_category: "desi"
+            }
+        ]
     },
     {
         restaurant_id: "karachi_bakers_snacks",
@@ -384,7 +676,24 @@ const restaurants_database = [
         total_reviews: 290,
         opening_hours: "7:00 AM - 11:30 PM",
         student_advice: "Warm potato samosas and fresh chana chaat.",
-        maps_search_query: "Karachi Bakers Sweets Quaidabad National Highway Karachi"
+        maps_search_query: "Karachi Bakers Sweets Quaidabad National Highway Karachi",
+        menu_items_list: [
+            { item_name: "Special Chana Samosa Chaat", price_in_rupees: 110, item_category: "breakfast" },
+            { item_name: "Hot Aloo Samosa (2 Pieces)", price_in_rupees: 70, item_category: "breakfast" },
+            { item_name: "Sweet Creamy Lassi Cup", price_in_rupees: 100, item_category: "beverage" },
+            { item_name: "Cardamom Milk Chai", price_in_rupees: 50, item_category: "beverage" }
+        ],
+        recommended_single_person_deals: [
+            {
+                deal_name: "Solo Evening Chaat Deal",
+                deal_description: "Special samosa chaat paired with cardamom milk chai.",
+                deal_items: ["Special Chana Samosa Chaat", "Cardamom Milk Chai"],
+                deal_price_in_rupees: 150,
+                deal_tag: "Evening Snack",
+                deal_budget_type: "budget",
+                deal_food_category: "breakfast"
+            }
+        ]
     },
     {
         restaurant_id: "quetta_subhan_allah",
@@ -400,7 +709,24 @@ const restaurants_database = [
         total_reviews: 450,
         opening_hours: "24 Hours Open",
         student_advice: "Murgh chholay and parathas with malai chai.",
-        maps_search_query: "Quetta Subhan Allah Cafe Quaidabad Karachi"
+        maps_search_query: "Quetta Subhan Allah Cafe Quaidabad Karachi",
+        menu_items_list: [
+            { item_name: "Special Murgh Chholay with 2 Naan", price_in_rupees: 220, item_category: "breakfast" },
+            { item_name: "Halwa Poori Thali", price_in_rupees: 160, item_category: "breakfast" },
+            { item_name: "Karak Malai Chai", price_in_rupees: 60, item_category: "beverage" },
+            { item_name: "Sweet Meethi Lassi", price_in_rupees: 110, item_category: "beverage" }
+        ],
+        recommended_single_person_deals: [
+            {
+                deal_name: "Solo Murgh Chholay Breakfast",
+                deal_description: "Hot spiced murgh chholay, tandoori naan, and karak malai chai.",
+                deal_items: ["Special Murgh Chholay with 2 Naan", "Karak Malai Chai"],
+                deal_price_in_rupees: 260,
+                deal_tag: "Desi Breakfast",
+                deal_budget_type: "budget",
+                deal_food_category: "breakfast"
+            }
+        ]
     },
     {
         restaurant_id: "super_madina_shinwari",
@@ -416,7 +742,24 @@ const restaurants_database = [
         total_reviews: 920,
         opening_hours: "4:00 PM - 3:00 AM",
         student_advice: "Chicken white karahi with hot roghani naan.",
-        maps_search_query: "Super Madina Restaurant National Highway Karachi"
+        maps_search_query: "Super Madina Restaurant National Highway Karachi",
+        menu_items_list: [
+            { item_name: "Chicken Shinwari Karahi Half Kg", price_in_rupees: 750, item_category: "desi" },
+            { item_name: "Hot Roghani Naan (2 Pieces)", price_in_rupees: 90, item_category: "desi" },
+            { item_name: "Special Highway Green Tea / Chai", price_in_rupees: 60, item_category: "beverage" },
+            { item_name: "Chilled Doodh Soda Glass", price_in_rupees: 90, item_category: "beverage" }
+        ],
+        recommended_single_person_deals: [
+            {
+                deal_name: "Single Diner Karahi Treat",
+                deal_description: "Solo portion freshly cooked Shinwari karahi with 2 naan and doodh soda.",
+                deal_items: ["Chicken Shinwari Karahi Half Kg", "Hot Roghani Naan (2 Pieces)", "Chilled Doodh Soda Glass"],
+                deal_price_in_rupees: 880,
+                deal_tag: "Highway Feast",
+                deal_budget_type: "premium",
+                deal_food_category: "desi"
+            }
+        ]
     },
     {
         restaurant_id: "al_sajjad_highway",
@@ -432,7 +775,24 @@ const restaurants_database = [
         total_reviews: 1850,
         opening_hours: "5:00 PM - 4:00 AM",
         student_advice: "Great venue for group celebration treats after exams.",
-        maps_search_query: "Al Sajjad Restaurant National Highway Karachi"
+        maps_search_query: "Al Sajjad Restaurant National Highway Karachi",
+        menu_items_list: [
+            { item_name: "Chicken Koyla Karahi Half Kg", price_in_rupees: 850, item_category: "desi" },
+            { item_name: "Special Sajji Portion with Rice", price_in_rupees: 650, item_category: "desi" },
+            { item_name: "Roghani Naan Fresh", price_in_rupees: 50, item_category: "desi" },
+            { item_name: "Karak Doodh Patti", price_in_rupees: 70, item_category: "beverage" }
+        ],
+        recommended_single_person_deals: [
+            {
+                deal_name: "Solo Sajji & Rice Plate",
+                deal_description: "Quarter chicken sajji served over fragrant spiced rice and salad.",
+                deal_items: ["Special Sajji Portion with Rice", "Karak Doodh Patti"],
+                deal_price_in_rupees: 700,
+                deal_tag: "Royal Treat",
+                deal_budget_type: "premium",
+                deal_food_category: "desi"
+            }
+        ]
     },
     {
         restaurant_id: "red_apple_malir",
@@ -448,7 +808,25 @@ const restaurants_database = [
         total_reviews: 1100,
         opening_hours: "12:00 PM - 2:00 AM",
         student_advice: "Garlic mayo paratha rolls and loaded fries.",
-        maps_search_query: "Red Apple Malir Quaidabad Karachi"
+        maps_search_query: "Red Apple Malir Quaidabad Karachi",
+        menu_items_list: [
+            { item_name: "Red Apple Special Zinger Burger", price_in_rupees: 310, item_category: "fastfood" },
+            { item_name: "Chicken Garlic Mayo Paratha Roll", price_in_rupees: 210, item_category: "fastfood" },
+            { item_name: "Crispy Curly Seasoned Fries", price_in_rupees: 180, item_category: "fastfood" },
+            { item_name: "Arabic Chicken Shawarma Wrap", price_in_rupees: 190, item_category: "fastfood" },
+            { item_name: "Creamy Chicken Alfredo Pasta", price_in_rupees: 380, item_category: "fastfood" }
+        ],
+        recommended_single_person_deals: [
+            {
+                deal_name: "Red Apple Solo Combo",
+                deal_description: "Chicken garlic mayo roll with curly seasoned fries and cold drink.",
+                deal_items: ["Chicken Garlic Mayo Paratha Roll", "Crispy Curly Seasoned Fries"],
+                deal_price_in_rupees: 360,
+                deal_tag: "Best 1-Person Value",
+                deal_budget_type: "mid",
+                deal_food_category: "fastfood"
+            }
+        ]
     },
     {
         restaurant_id: "student_biryani_quaidabad",
@@ -464,7 +842,24 @@ const restaurants_database = [
         total_reviews: 880,
         opening_hours: "11:00 AM - 12:30 AM",
         student_advice: "Chicken biryani and chicken broast with soft drinks.",
-        maps_search_query: "Student Biryani Quaidabad Karachi"
+        maps_search_query: "Student Biryani Quaidabad Karachi",
+        menu_items_list: [
+            { item_name: "Classic Student Chicken Biryani Single", price_in_rupees: 250, item_category: "desi" },
+            { item_name: "Crispy Fried Chicken Broast Quarter", price_in_rupees: 320, item_category: "fastfood" },
+            { item_name: "Chicken Shami Burger", price_in_rupees: 160, item_category: "fastfood" },
+            { item_name: "Potato Fries Regular", price_in_rupees: 100, item_category: "fastfood" }
+        ],
+        recommended_single_person_deals: [
+            {
+                deal_name: "Student Deal #1 (Biryani + Drink)",
+                deal_description: "Classic chicken biryani single with raita, salad, and cold beverage.",
+                deal_items: ["Classic Student Chicken Biryani Single", "Potato Fries Regular"],
+                deal_price_in_rupees: 320,
+                deal_tag: "Best 1-Person Value",
+                deal_budget_type: "budget",
+                deal_food_category: "desi"
+            }
+        ]
     }
 ];
 

@@ -1,0 +1,59 @@
+<section class="intro_header_section">
+    <div class="location_radius_pill">
+        <i class="fa-solid fa-location-dot"></i>
+        <span>Canteens and Food Spots within 5 km of Shah Latif Campus</span>
+    </div>
+    <h2 class="main_page_title">Decide What to Eat with a <span class="title_highlight_word">Spin</span></h2>
+    <p class="main_page_description">
+        Spin the interactive wheel to pick a meal, then view matching canteens and restaurants around FAST Shah Latif campus.
+    </p>
+
+    <div class="preferences_filter_panel">
+        <div class="filter_panel_top_row">
+            <div class="filter_panel_label">
+                <i class="fa-solid fa-sliders"></i>
+                <span>Filter Wheel Options</span>
+            </div>
+            <button id="reset_all_filters_button" class="reset_link_button">Reset Filters</button>
+        </div>
+
+        <div class="filter_inputs_grid">
+            <div class="filter_control_group">
+                <label for="food_category_select">Food Category</label>
+                <select id="food_category_select">
+                    <option value="all">All Items (12 Foods)</option>
+                    <option value="fastfood">Fast Food & Rolls</option>
+                    <option value="desi">Desi & Main Dishes</option>
+                    <option value="beverage">Chai & Cold Drinks</option>
+                    <option value="breakfast">Breakfast & Snacks</option>
+                </select>
+            </div>
+
+            <div class="filter_control_group">
+                <label for="distance_radius_select">Maximum Distance</label>
+                <select id="distance_radius_select">
+                    <option value="5" selected>Within 5 km Radius</option>
+                    <option value="0.5">Inside Campus (&le; 0.5 km)</option>
+                    <option value="1.5">Under 1.5 km (Walking)</option>
+                    <option value="3.0">Under 3.0 km (Bike / Auto)</option>
+                </select>
+            </div>
+
+            <div class="filter_control_group">
+                <label for="budget_level_select">Budget Level</label>
+                <select id="budget_level_select">
+                    <option value="all">Any Budget</option>
+                    <option value="budget">Pocket Friendly (&lt; Rs 300)</option>
+                    <option value="mid">Mid-Range (Rs 300 - Rs 600)</option>
+                    <option value="premium">Heavy Treat (&gt; Rs 600)</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="active_items_preview_row">
+            <span class="active_items_heading">Items on Wheel:</span>
+            <div id="active_food_items_container" class="active_items_tags_list">
+            </div>
+        </div>
+    </div>
+</section>

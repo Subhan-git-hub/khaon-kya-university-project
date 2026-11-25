@@ -12,10 +12,10 @@
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body data-page-type="home">
     <header class="app_header_bar">
         <div class="navigation_container">
-            <div class="brand_identity_block">
+            <a href="index.html" class="brand_identity_block">
                 <div class="brand_logo_icon">
                     <i class="fa-solid fa-utensils"></i>
                 </div>
@@ -23,17 +23,19 @@
                     <h1 class="brand_main_heading">Khao Kya? <span class="urdu_brand_text">کھاؤ کیا؟</span></h1>
                     <span class="campus_location_badge">FAST-NUCES Karachi &bull; Shah Latif Campus</span>
                 </div>
-            </div>
+            </a>
 
-            <div class="header_action_controls">
-                <button id="sound_toggle_button" class="action_icon_button" title="Toggle Sound">
-                    <i class="fa-solid fa-volume-high" id="sound_status_icon"></i>
-                </button>
-
-                <button id="voice_toggle_button" class="action_icon_button active" title="Toggle Voice Announcement">
-                    <i class="fa-solid fa-bullhorn"></i>
-                </button>
-            </div>
+            <nav class="main_navigation_links">
+                <a href="index.html" class="nav_link_item active_nav">
+                    <i class="fa-solid fa-dharmachakra"></i> Spinner
+                </a>
+                <a href="locations.html" class="nav_link_item">
+                    <i class="fa-solid fa-map-location-dot"></i> All Locations
+                </a>
+                <a href="menu.html" class="nav_link_item">
+                    <i class="fa-solid fa-utensils"></i> Menu & Deals
+                </a>
+            </nav>
         </div>
     </header>
 
@@ -92,8 +94,7 @@
 
                 <div class="active_items_preview_row">
                     <span class="active_items_heading">Items on Wheel:</span>
-                    <div id="active_food_items_container" class="active_items_tags_list">
-                    </div>
+                    <div id="active_food_items_container" class="active_items_tags_list"></div>
                 </div>
             </div>
         </section>
@@ -110,7 +111,6 @@
                     
                     <button id="center_spin_hub_button" class="wheel_center_hub_button" title="Spin">
                         <span class="hub_spin_text">SPIN</span>
-                        <!-- <span class="hub_urdu_text">گھماؤ</span> -->
                     </button>
                 </div>
             </div>
@@ -119,47 +119,21 @@
                 <button id="primary_spin_trigger_button" class="large_spin_action_button">
                     <i class="fa-solid fa-rotate"></i>
                     <span>SPIN THE WHEEL</span>
-                    <!-- <span class="spacebar_hint_badge">Spacebar</span> -->
                 </button>
 
                 <div class="auxiliary_action_buttons">
                     <button id="instant_random_pick_button" class="subtle_action_button">
                         <i class="fa-solid fa-bolt"></i> Instant Pick
                     </button>
-                    <button id="jump_to_all_spots_button" class="subtle_action_button">
-                        <i class="fa-solid fa-list-ul"></i> View All Spots
-                    </button>
+                    <a href="locations.html" class="subtle_action_button">
+                        <i class="fa-solid fa-map-location-dot"></i> Browse All Stalls
+                    </a>
                 </div>
 
                 <div class="wheel_status_message_box" id="wheel_status_message_box">
                     <i class="fa-solid fa-circle-info"></i>
                     <span>Click <strong>SPIN THE WHEEL</strong> to choose your food.</span>
                 </div>
-            </div>
-        </section>
-
-        <section class="spots_directory_section" id="spots_directory_section">
-            <div class="directory_section_header">
-                <div>
-                    <h3 class="directory_section_title">Food Stalls and Canteens near Shah Latif Campus</h3>
-                    <p class="directory_section_subtitle">Verified university canteens and nearby eateries within 5 km</p>
-                </div>
-
-                <div class="search_input_wrapper">
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                    <input type="text" id="spots_directory_search_input" placeholder="Search biryani, zinger, chai...">
-                </div>
-            </div>
-
-            <div class="distance_filter_pills_bar" id="distance_filter_pills_bar">
-                <button class="filter_pill_button active" data-radius="all">All Distances (&le; 5 km)</button>
-                <button class="filter_pill_button" data-radius="0.5">On-Campus Canteens</button>
-                <button class="filter_pill_button" data-radius="1.5">Under 1.5 km (Shah Latif)</button>
-                <button class="filter_pill_button" data-radius="3.0">Under 3 km (Quaidabad / Manzil)</button>
-                <button class="filter_pill_button" data-radius="5.0">3 to 5 km (Highway)</button>
-            </div>
-
-            <div class="restaurants_cards_container" id="restaurants_cards_container">
             </div>
         </section>
     </main>
@@ -189,7 +163,7 @@
 
             <div class="popup_subfilters_row">
                 <div class="popup_subfilters_info">
-                    <span class="popup_spots_count_label" id="popup_matching_spots_counter">Found 3 spots</span>
+                    <span class="popup_spots_count_label" id="popup_matching_spots_counter">Found 0 spots</span>
                 </div>
                 
                 <div class="popup_subfilters_actions">
@@ -211,12 +185,11 @@
                 </div>
             </div>
 
-            <div class="popup_restaurants_scroll_list" id="popup_restaurants_scroll_list">
-            </div>
+            <div class="popup_restaurants_scroll_list" id="popup_restaurants_scroll_list"></div>
 
             <div class="popup_bottom_action_bar">
                 <button class="popup_secondary_action_button" id="popup_spin_again_button">
-                    <i class="fa-solid fa-rotate-right"></i> Spin Again 
+                    <i class="fa-solid fa-rotate-right"></i> Spin Again
                 </button>
                 <button class="popup_primary_action_button" id="popup_done_action_button">
                     <i class="fa-solid fa-check"></i> Close
@@ -240,7 +213,6 @@
     </footer>
 
     <script src="data.js"></script>
-    <script src="audio.js"></script>
     <script src="app.js"></script>
 </body>
 </html>
