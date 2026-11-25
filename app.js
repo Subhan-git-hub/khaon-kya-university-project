@@ -323,7 +323,7 @@ $(document).ready(function() {
                     ` : ''}
 
                     <div class="popup_card_footer">
-                        <span>~${restaurant_record.walking_time_minutes} min walk</span>
+                        <span>${restaurant_record.walking_time_minutes} min walk</span>
                         <a href="${google_maps_navigation_url}" target="_blank" rel="noopener noreferrer" class="google_maps_action_link">
                             <i class="fa-solid fa-diamond-turn-right"></i> Directions on Maps
                         </a>
@@ -420,7 +420,7 @@ $(document).ready(function() {
                     </div>
 
                     <div class="card_footer_actions">
-                        <span style="font-size: 0.76rem; color: #64748B;">~${restaurant_entry.walking_time_minutes} min walk</span>
+                        <span style="font-size: 0.76rem; color: #64748B;">${restaurant_entry.walking_time_minutes} min walk</span>
                         <a href="${google_maps_navigation_url}" target="_blank" rel="noopener noreferrer" class="google_maps_action_link">
                             <i class="fa-solid fa-diamond-turn-right"></i> View Maps
                         </a>
