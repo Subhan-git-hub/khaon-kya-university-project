@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khao Kya? - Food Spinner for FAST Karachi (Shah Latif Campus)</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Nastaliq+Urdu:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="app_header_bar">
+        <div class="navigation_container">
+            <div class="brand_identity_block">
+                <div class="brand_logo_icon">
+                    <i class="fa-solid fa-utensils"></i>
+                </div>
+                <div class="brand_title_wrapper">
+                    <h1 class="brand_main_heading">Khao Kya? <span class="urdu_brand_text">کھاؤ کیا؟</span></h1>
+                    <span class="campus_location_badge">FAST-NUCES Karachi &bull; Shah Latif Campus</span>
+                </div>
+            </div>
+
+            <div class="header_action_controls">
+                <button id="sound_toggle_button" class="action_icon_button" title="Toggle Sound">
+                    <i class="fa-solid fa-volume-high" id="sound_status_icon"></i>
+                </button>
+
+                <button id="voice_toggle_button" class="action_icon_button active" title="Toggle Voice Announcement">
+                    <i class="fa-solid fa-bullhorn"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="primary_content_area">
+        <section class="intro_header_section">
+            <div class="location_radius_pill">
+                <i class="fa-solid fa-location-dot"></i>
+                <span>Canteens and Food Spots within 5 km of Shah Latif Campus</span>
+            </div>
+            <h2 class="main_page_title">Decide What to Eat with a <span class="title_highlight_word">Spin</span></h2>
+            <p class="main_page_description">
+                Spin the interactive wheel to pick a meal, then view matching canteens and restaurants around FAST Shah Latif campus.
+            </p>
+
+            <div class="preferences_filter_panel">
+                <div class="filter_panel_top_row">
+                    <div class="filter_panel_label">
+                        <i class="fa-solid fa-sliders"></i>
+                        <span>Filter Wheel Options</span>
+                    </div>
+                    <button id="reset_all_filters_button" class="reset_link_button">Reset Filters</button>
+                </div>
+
+                <div class="filter_inputs_grid">
+                    <div class="filter_control_group">
+                        <label for="food_category_select">Food Category</label>
+                        <select id="food_category_select">
+                            <option value="all">All Items (12 Foods)</option>
+                            <option value="fastfood">Fast Food & Rolls</option>
+                            <option value="desi">Desi & Main Dishes</option>
+                            <option value="beverage">Chai & Cold Drinks</option>
+                            <option value="breakfast">Breakfast & Snacks</option>
+                        </select>
+                    </div>
+
+                    <div class="filter_control_group">
+                        <label for="distance_radius_select">Maximum Distance</label>
+                        <select id="distance_radius_select">
+                            <option value="5" selected>Within 5 km Radius</option>
+                            <option value="0.5">Inside Campus (&le; 0.5 km)</option>
+                            <option value="1.5">Under 1.5 km (Walking)</option>
+                            <option value="3.0">Under 3.0 km (Bike / Auto)</option>
+                        </select>
+                    </div>
+
+                    <div class="filter_control_group">
+                        <label for="budget_level_select">Budget Level</label>
+                        <select id="budget_level_select">
+                            <option value="all">Any Budget</option>
+                            <option value="budget">Pocket Friendly (&lt; Rs 300)</option>
+                            <option value="mid">Mid-Range (Rs 300 - Rs 600)</option>
+                            <option value="premium">Heavy Treat (&gt; Rs 600)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="active_items_preview_row">
+                    <span class="active_items_heading">Items on Wheel:</span>
+                    <div id="active_food_items_container" class="active_items_tags_list">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="wheel_display_section">
+            <div class="wheel_frame_wrapper">
+                <div class="wheel_top_pointer" id="wheel_pointer_indicator">
+                    <div class="pointer_triangle_shape"></div>
+                    <div class="pointer_center_pin"></div>
+                </div>
+
+                <div class="canvas_wheel_container">
+                    <canvas id="food_wheel_canvas" width="540" height="540"></canvas>
+                    
+                    <button id="center_spin_hub_button" class="wheel_center_hub_button" title="Spin">
+                        <span class="hub_spin_text">SPIN</span>
+                        <span class="hub_urdu_text">گھماؤ</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="spin_actions_panel">
+                <button id="primary_spin_trigger_button" class="large_spin_action_button">
+                    <i class="fa-solid fa-rotate"></i>
+                    <span>SPIN THE WHEEL</span>
+                    <span class="spacebar_hint_badge">Spacebar</span>
+                </button>
+
+                <div class="auxiliary_action_buttons">
+                    <button id="instant_random_pick_button" class="subtle_action_button">
+                        <i class="fa-solid fa-bolt"></i> Instant Pick
+                    </button>
+                    <button id="jump_to_all_spots_button" class="subtle_action_button">
+                        <i class="fa-solid fa-list-ul"></i> View All Spots
+                    </button>
+                </div>
+
+                <div class="wheel_status_message_box" id="wheel_status_message_box">
+                    <i class="fa-solid fa-circle-info"></i>
+                    <span>Click <strong>SPIN THE WHEEL</strong> to choose your food.</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="spots_directory_section" id="spots_directory_section">
+            <div class="directory_section_header">
+                <div>
+                    <h3 class="directory_section_title">Food Stalls and Canteens near Shah Latif Campus</h3>
+                    <p class="directory_section_subtitle">Verified university canteens and nearby eateries within 5 km</p>
+                </div>
+
+                <div class="search_input_wrapper">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" id="spots_directory_search_input" placeholder="Search biryani, zinger, chai...">
+                </div>
+            </div>
+
+            <div class="distance_filter_pills_bar" id="distance_filter_pills_bar">
+                <button class="filter_pill_button active" data-radius="all">All Distances (&le; 5 km)</button>
+                <button class="filter_pill_button" data-radius="0.5">On-Campus Canteens</button>
+                <button class="filter_pill_button" data-radius="1.5">Under 1.5 km (Shah Latif)</button>
+                <button class="filter_pill_button" data-radius="3.0">Under 3 km (Quaidabad / Manzil)</button>
+                <button class="filter_pill_button" data-radius="5.0">3 to 5 km (Highway)</button>
+            </div>
+
+            <div class="restaurants_cards_container" id="restaurants_cards_container">
+            </div>
+        </section>
+    </main>
+
+    <div class="popup_modal_overlay" id="food_result_popup_modal" role="dialog" aria-modal="true">
+        <div class="popup_modal_card">
+            <button class="popup_close_button" id="close_result_popup_button" aria-label="Close">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <div class="winner_header_banner">
+                <div class="winner_status_pill">
+                    <i class="fa-solid fa-check"></i> RECOMMENDED MEAL
+                </div>
+                <div class="winner_food_details">
+                    <div class="winner_emoji_avatar" id="winner_food_emoji_display">🍔</div>
+                    <div class="winner_text_block">
+                        <span class="winner_small_label">The wheel selected:</span>
+                        <h2 class="winner_food_title" id="winner_food_name_display">Burger</h2>
+                        <span class="winner_urdu_title" id="winner_food_urdu_display">برگر</span>
+                    </div>
+                </div>
+                <p class="winner_quote_text" id="winner_food_quote_display">
+                    "Assignment submit ho gayi? Ab burger ka haq banta hai!"
+                </p>
+            </div>
+
+            <div class="popup_subfilters_row">
+                <div class="popup_subfilters_info">
+                    <span class="popup_spots_count_label" id="popup_matching_spots_counter">Found 3 spots</span>
+                </div>
+                
+                <div class="popup_subfilters_actions">
+                    <div class="popup_radius_pill_group" id="popup_radius_pill_group">
+                        <button class="mini_radius_pill active" data-radius="5">All (&le; 5km)</button>
+                        <button class="mini_radius_pill" data-radius="0.5">Campus (&le; 0.5km)</button>
+                        <button class="mini_radius_pill" data-radius="1.5">&le; 1.5km</button>
+                        <button class="mini_radius_pill" data-radius="3.0">&le; 3km</button>
+                    </div>
+
+                    <div class="popup_sort_wrapper">
+                        <label for="popup_sort_dropdown">Sort:</label>
+                        <select id="popup_sort_dropdown">
+                            <option value="distance" selected>Distance (Closest)</option>
+                            <option value="rating">Rating (Highest)</option>
+                            <option value="price">Budget (Lowest)</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="popup_restaurants_scroll_list" id="popup_restaurants_scroll_list">
+            </div>
+
+            <div class="popup_bottom_action_bar">
+                <button class="popup_secondary_action_button" id="popup_spin_again_button">
+                    <i class="fa-solid fa-rotate-right"></i> Spin Again (گھماؤ دوبارہ)
+                </button>
+                <button class="popup_primary_action_button" id="popup_done_action_button">
+                    <i class="fa-solid fa-check"></i> Close
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="app_page_footer">
+        <div class="footer_inner_container">
+            <div class="footer_left_content">
+                <strong>Khao Kya?</strong> &bull; Location-Based Food Recommendation System
+                <p>Designed for students at FAST-NUCES Karachi, Shah Latif Campus.</p>
+            </div>
+            <div class="footer_right_content">
+                <p>National University of Computer and Emerging Sciences (FAST-NUCES), Karachi.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="data.js"></script>
+    <script src="audio.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
